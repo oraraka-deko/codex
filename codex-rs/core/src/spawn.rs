@@ -64,8 +64,8 @@ pub(crate) async fn spawn_child_async(
     // any child processes that were spawned as part of a `"shell"` tool call
     // to also be terminated.
 
-    // This relies on prctl(2), so it only works on Linux.
-    #[cfg(target_os = "linux")]
+    // This relies on prctl(2), so it only works on Linux and Android.
+    #[cfg(any(target_os = "linux", target_os = "android"))]
     unsafe {
         cmd.pre_exec(|| {
             // This prctl call effectively requests, "deliver SIGTERM when my

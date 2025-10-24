@@ -89,6 +89,19 @@ openssl-sys = { workspace = true, features = ["vendored"] }
 [target.aarch64-unknown-linux-musl.dependencies]
 openssl-sys = { workspace = true, features = ["vendored"] }
 
+# Build OpenSSL from source for Android builds.
+[target.aarch64-linux-android.dependencies]
+openssl-sys = { workspace = true, features = ["vendored"] }
+
+[target.armv7-linux-androideabi.dependencies]
+openssl-sys = { workspace = true, features = ["vendored"] }
+
+[target.i686-linux-android.dependencies]
+openssl-sys = { workspace = true, features = ["vendored"] }
+
+[target.x86_64-linux-android.dependencies]
+openssl-sys = { workspace = true, features = ["vendored"] }
+
 [dev-dependencies]
 assert_cmd = { workspace = true }
 assert_matches = { workspace = true }
